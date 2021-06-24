@@ -1,0 +1,179 @@
+{
+  "users": [
+    {
+      "created_at": "2019-10-15T05:28:25.593Z",
+      "login": "oleg@demo.ru",
+      "password": "demo",
+      "id": 1,
+      "balance": {
+        "RUB": 2739.7967164650017,
+        "USD": 16778.244699572613,
+        "EUR": 48980018,
+        "NTC": 2944.142647858071
+      }
+    },
+    {
+      "created_at": "2019-11-16T05:28:25.593Z",
+      "login": "ivan@demo.ru",
+      "password": "demo",
+      "id": 2,
+      "netocoins": 100,
+      "balance": {
+        "RUB": 70,
+        "USD": 0,
+        "EUR": 0,
+        "NTC": 100
+      }
+    },
+    {
+      "created_at": "2019-5-14T05:28:25.593Z",
+      "login": "petr@demo.ru",
+      "password": "demo",
+      "id": 3,
+      "balance": {
+        "RUB": 20000,
+        "USD": 300,
+        "EUR": 500,
+        "NTC": 50000
+      }
+    },
+    {
+      "created_at": "2020-1-15T05:28:25.593Z",
+      "login": "galina@demo.ru",
+      "password": "demo",
+      "id": 4,
+      "balance": {
+        "RUB": 34000.39479392624,
+        "USD": 174,
+        "EUR": 1000300,
+        "NTC": 20000
+      }
+    },
+    {
+      "created_at": "2020-2-16T05:28:25.593Z",
+      "login": "vladimir@demo.ru",
+      "password": "demo",
+      "id": 5,
+      "balance": {
+        "RUB": 85406.73575129532,
+        "USD": 500,
+        "EUR": 1135.5614973262032,
+        "NTC": 89905
+      }
+    },
+    {
+      "created_at": "2021-06-22T20:14:20.935Z",
+      "login": "fghgjjj",
+      "password": "fdhgfhj",
+      "id": 6,
+      "balance": {
+        "RUB": 0,
+        "USD": 0,
+        "EUR": 0,
+        "NTC": 0
+      }
+    },
+    {
+      "created_at": "2021-06-23T13:20:24.955Z",
+      "login": " oleg@demo.ru",
+      "password": "demo",
+      "id": 7,
+      "balance": {
+        "RUB": 0,
+        "USD": 0,
+        "EUR": 0,
+        "NTC": 0
+      }
+    },
+    {
+      "created_at": "2021-06-23T13:25:10.322Z",
+      "login": " ivan@demo.ru",
+      "password": "demo",
+      "id": 8,
+      "balance": {
+        "RUB": 6800000115,
+        "USD": 840000000,
+        "EUR": 550,
+        "NTC": 80000000002
+      }
+    },
+    {
+      "created_at": "2021-06-23T13:46:58.116Z",
+      "login": "kalinda-k@mail.ru",
+      "password": "dfgjk",
+      "id": 9,
+      "balance": {
+        "RUB": 0,
+        "USD": 0,
+        "EUR": 0,
+        "NTC": 0
+      }
+    },
+    {
+      "created_at": "2021-06-23T13:48:47.240Z",
+      "login": "Anna",
+      "password": "fdgfjk",
+      "id": 10,
+      "balance": {
+        "RUB": 0,
+        "USD": 0,
+        "EUR": 0,
+        "NTC": 0
+      }
+    },
+    {
+      "created_at": "2021-06-23T13:54:28.152Z",
+      "login": " ",
+      "password": "  ",
+      "id": 11,
+      "balance": {
+        "RUB": 0,
+        "USD": 0,
+        "EUR": 0,
+        "NTC": 0
+      }
+    },
+    {
+      "created_at": "2021-06-23T14:04:14.159Z",
+      "login": "  ",
+      "password": " ",
+      "id": 12,
+      "balance": {
+        "RUB": 0,
+        "USD": 0,
+        "EUR": 0,
+        "NTC": 0
+      }
+    },
+    {
+      "created_at": "2021-06-23T14:05:17.018Z",
+      "login": "///",
+      "password": " ",
+      "id": 13,
+      "balance": {
+        "RUB": 0,
+        "USD": 0,
+        "EUR": 0,
+        "NTC": 0
+      }
+    }
+  ],
+  "favorites": {
+    "1": {
+      "2": "Ваня дурачок",
+      "3": "Пират Петр",
+      "5": "Анна"
+    },
+    "2": {
+      "1": "Чувак, который должен 20к неткойнов",
+      "3": "Партнёр по бизнесу"
+    },
+    "3": {
+      "2": "Важный клиент"
+    },
+    "4": {},
+    "5": {
+      "1": "Важный пацан"
+    }
+  }
+}
