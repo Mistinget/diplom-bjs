@@ -1,10 +1,10 @@
 "use strict"
 
-const nLogoutBtn = new LogoutButton;
+const logoutButton = new LogoutButton();
 
-nLogoutBtn.action = function logoutBtn() {
+logoutButton.action = function logoutBtn() {
     ApiConnector.logout(function(response) {
-        if (response.success === true) {
+        if (response.success) {
             document.location.reload();
         }
     });
@@ -12,90 +12,80 @@ nLogoutBtn.action = function logoutBtn() {
 
 //запрос на получение текущего пользователя
 ApiConnector.current(function(response) {
-    if (response.success === true) {
+    if (response.success) {
         ProfileWidget.showProfile(response.data);
     }
 });
 
-const ratesBrd = new RatesBoard; //курсы валют
+const ratesBoard = new RatesBoard(); //курсы валют
 
 function exchangeRate() {
-    ApiConnector.getStocks(function(rate) {
-        if (rate.success === true) {
-            ratesBrd.clearTable(rate.data);
-            ratesBrd.fillTable(rate.data);
+    ApiConnector.getStocks(function(response) {
+        if (response.success) {
+            ratesBoard.clearTable(response.data);
+            ratesBoard.fillTable(response.data);
         }
     })
 };
 window.setInterval(exchangeRate, 1000);
 
-const moneyMngr = new MoneyManager;
+const moneyManager = new MoneyManager();
 
-moneyMngr.addMoneyCallback = function add(data) {
-    ApiConnector.addMoney(data, function(rate) {
-        if (rate.success === true) {
-            ProfileWidget.showProfile(rate.data);
-            moneyMngr.setMessage(rate.success, `${data.amount} ${data.currency} успешно внесены!`);
-        } else {
-            moneyMngr.setMessage(rate.success, rate.error);
-        }
+moneyManager.addMoneyCallback = function add(data) {
+    ApiConnector.addMoney(data, function(response) {
+        if (response.success) {
+            ProfileWidget.showProfile(response.data);
+        };
+        moneyManager.setMessage(response.success, response.success ? `${data.amount} ${data.currency} успешно внесены!` : response.error);
     })
 };
 
-moneyMngr.conversionMoneyCallback = function conversion(data) {
-    ApiConnector.convertMoney(data, function(rate) {
-        if (rate.success === true) {
-            ProfileWidget.showProfile(rate.data);
-            moneyMngr.setMessage(rate.success, `Конвертировано ${data.fromAmount} ${data.fromCurrency} в ${data.targetCurrency}`);
-        } else {
-            moneyMngr.setMessage(rate.success, rate.error);
-        }
+moneyManager.conversionMoneyCallback = function conversion(data) {
+    ApiConnector.convertMoney(data, function(response) {
+        if (response.success) {
+            ProfileWidget.showProfile(response.data);
+        };
+        moneyManager.setMessage(response.success, response.success ? `Конвертировано ${data.fromAmount} ${data.fromCurrency} в ${data.targetCurrency}` : response.error);
     })
 };
 
-moneyMngr.sendMoneyCallback = function add(data) {
-    ApiConnector.transferMoney(data, function(rate) {
-        if (rate.success === true) {
-            ProfileWidget.showProfile(rate.data);
-            moneyMngr.setMessage(rate.success, `${data.amount} ${data.currency} успешно переведены!`);
-        } else {
-            moneyMngr.setMessage(rate.success, rate.error);
+moneyManager.sendMoneyCallback = function add(data) {
+    ApiConnector.transferMoney(data, function(response) {
+        if (response.success) {
+            ProfileWidget.showProfile(response.data);
         }
+        moneyManager.setMessage(response.success, response.success ? `${data.amount} ${data.currency} успешно переведены!` : response.error);
     })
 };
 
-const favorites = new FavoritesWidget;
+const favorites = new FavoritesWidget();
 //Запрос начальног списка избранного
 ApiConnector.getFavorites(function(response) {
-    if (response.success === true) {
+    if (response.success) {
         favorites.clearTable(response.data);
         favorites.fillTable(response.data);
-        moneyMngr.updateUsersList(response.data); //заполнение выпадающго списка для перевода денег
+        moneyManager.updateUsersList(response.data); //заполнение выпадающго списка для перевода денег
     }
 });
 
 favorites.addUserCallback = function addUsers(data) {
     ApiConnector.addUserToFavorites(data, function(response) {
-        if (response.success === true) {
+        if (response.success) {
             favorites.clearTable(response.data);
             favorites.fillTable(response.data);
-            moneyMngr.updateUsersList(response.data);
-            moneyMngr.setMessage(response.success, `${data.name} добавлен!`);
-        } else {
-            moneyMngr.setMessage(response.success, response.error);
+            moneyManager.updateUsersList(response.data);
         }
+        moneyManager.setMessage(response.success, response.success ? `${data.name} добавлен!` : response.error);
     })
 };
 
 favorites.removeUserCallback = function removeUsers(data) {
     ApiConnector.removeUserFromFavorites(data, function(response) {
-        if (response.success === true) {
+        if (response.success) {
             favorites.clearTable(response.data);
             favorites.fillTable(response.data);
-            moneyMngr.updateUsersList(response.data);
-            moneyMngr.setMessage(response.success, `Пользователь удалён!`);
-        } else {
-            moneyMngr.setMessage(response.success, response.error);
+            moneyManager.updateUsersList(response.data);
         }
+        moneyManager.setMessage(response.success, response.success ? `Пользователь удалён!` : response.error);
     })
 };

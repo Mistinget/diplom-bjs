@@ -19,9 +19,9 @@
       "id": 2,
       "netocoins": 100,
       "balance": {
-        "RUB": 70,
+        "RUB": 1020.5007215007215,
         "USD": 0,
-        "EUR": 5000000,
+        "EUR": 4999500.011602018,
         "NTC": 100
       }
     },
@@ -33,7 +33,7 @@
       "balance": {
         "RUB": 20000,
         "USD": 300,
-        "EUR": 500,
+        "EUR": 1000,
         "NTC": 50000
       }
     },
@@ -150,6 +150,18 @@
       "login": "///",
       "password": " ",
       "id": 13,
+      "balance": {
+        "RUB": 0,
+        "USD": 0,
+        "EUR": 0,
+        "NTC": 0
+      }
+    },
+    {
+      "created_at": "2021-06-25T11:03:34.517Z",
+      "login": "cnhgk",
+      "password": "ertyukoi",
+      "id": 14,
       "balance": {
         "RUB": 0,
         "USD": 0,
